@@ -1,0 +1,96 @@
+----------------------------------------------------------------------
+VOCABULAIRE
+----------------------------------------------------------------------
+
+commit : une sauvegarde de tous les fichiers à un certain moment (historique)
+répertoire : endroit où on utilise git pour commit, qui contient l'historique
+zone de travail : là où on édite les fichiers
+zone de transit : là où se trouvent les fichiers entre le moment où ils sont add et commit
+branch : différentes branches de commit, pour effectuer des correctifs ,
+		améliorations, fonctionalités, sans toucher à la principale (master)
+		modifier des fichiers dans une branche ne les modifie pas dans l'autre
+		utile pour les projets à plusieurs 
+remote : répertoire vide pour github
+fast forward merge : si on a deux commit a et b et que a est ancetre de b
+					
+
+
+----------------------------------------------------------------------
+COMMANDES
+----------------------------------------------------------------------
+
+ATTENTION : Pas de guillemets sur les noms de branches commits...
+
+-----------------------------
+GIT
+
+q: quitter le log / diff ...
+
+git clone "url" : copier un répertoire complet avec tout les commits (local)
+
+git log : montrer tout les commit
+git log --graph --oneline "branch 1" "branch 2" : montrer les logs de 2 branches plus clairement
+git status : vérifier ce qu'on a commit
+
+git checkout "numéro commit": remettre les fichiers tels qu'ils étaient à un certain point
+git checkout "nom de branche": passer dans une autre branche (master pour la principale)
+
+git diff "numéro commit 1" "numéro commit 2": regarder les différences entre deux commit avec leur numéro de log
+git diff : différence entre deux commit de la zone de transit et la zone de travail (sans argument)
+git diff --staged : différence entre zone de transit et commit le + récent 
+git show "numéro de commit" : montrer les différences entre un commit et son parent 
+
+git init : initialiser un répertoire git, à utiliser dans le répertoire voulu
+git add "nom du fichier": ajouter un fichier vers la zone de transit
+	git add --all 
+	
+	
+git commit : créer un commit (fonctionne pas très bien)
+git commit -m "nom du fichier" : permet de créer un commit en changeant direct le nom
+		ATTENTION : on met les guillements
+
+git branch : montrer les branch actuelles
+git branch "nom de branch" : création une nouvelle branche 
+git -b branch "nom de branch" : création + checkout
+git branch -d "nom de branch" : supprimer une branche 
+
+git merge "nom branche 1" "nom branche 2" : fusionner deux branches (passer en master avant)
+		si "CONFLICT (content): Merge conflict in game.js
+		Automatic merge failed; fix conflicts and then commit the result."
+		soit on utilise git merge --abort pour réparer
+		soit on corrige manuellement
+		les zones de conflit sont notées par des <<<< >>>> =====
+
+-----------------------------
+GITHUB
+
+origin/master : branche par défaut du remote
+
+fork (sur le site) : copie sur notre propre compte un remote, qu'on peut cloner après
+		auteur inclus
+création d'un répertoire manuellement sur le site
+
+pull request : on créé une nouvelle branche qu'on push (pas de probleme avec le master)
+		soit sur le bouton si push récent
+		sinon on va dans la branche, clic pull request 	
+		
+git remote : montre les remote existants 		
+git remote add "nom de remote" "url donné par github": création d'un remote 
+	il faut créer un remote sur github avant pour avoir l'url
+git remote -v : vérifier qu'on a créé correctement 		
+
+git push "nom remote" "nom branche" : copier une branche dans git hub
+	répertoire local -> remote de github 
+	on push vers le fork ou le remote qu'on a créé
+git pull "nom remote" "nom branche" : copier ce qu'il y a sur github 
+	remote de github -> répertoire local 
+	= git fetch + git merge
+	
+git fetch : récuperer les commits qui n'existent pas dans la branche courante 
+			et les stocker en local
+
+
+		
+	
+
+	
