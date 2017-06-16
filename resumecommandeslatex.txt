@@ -1,0 +1,50 @@
+========================================================================
+CORPS DE FICHIER EN FRANCAIS
+========================================================================
+
+\documentclass[french]{article}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{hyphenat}
+
+\begin{document}
+
+\end{document}
+
+========================================================================
+LIENS
+========================================================================
+
+https://www.sharelatex.com/learn/Main_Page
+http://www.science.uva.nl/onderwijs/lesmateriaal/latex/latexcourse.pdf
+
+========================================================================
+INSTRUCTIONS
+========================================================================
+
+-----------------------------
+PRESENTATION DU DOCUMENT
+-----------------------------
+
+Dans le préambule (avant \begin{document})
+
+\title{nom}
+\date{date}
+\author{auteur}
+
+\pagenumbering : numéroter les pages
+				+{gobble} à partir du docdument en lui même sans la page de garde
+\pagenumbering{arabic} 
+\maketitle : afficher le titre
+\newpage :  commence une nouvelle page
+
+-----------------------------
+MISE EN PAGE
+-----------------------------
+
+\textbf{texte} : gras
+\textit{texte} : italique
+\underline{texte} : souligné
