@@ -1,7 +1,7 @@
 ========================================================================
 CORPS DE FICHIER EN FRANCAIS
 ========================================================================
-
+test
 \documentclass[french]{article}
  
 \usepackage[utf8]{inputenc}
